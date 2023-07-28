@@ -20,5 +20,13 @@ namespace SnakeGame
 
             this.transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if(other.tag == "Player")
+            {
+                RandomizePosition();
+            }
+        }
     }
 }
